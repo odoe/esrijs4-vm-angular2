@@ -1,0 +1,32 @@
+@import url('https://js.arcgis.com/4.0beta3/esri/css/main.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#viewDiv {
+  position: absolute;
+  top: 1em;
+  bottom: 1em;
+  right: 1em;
+  left: 1em;
+}
+
+.esri-home {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 1em;
+  color: rgba(255,255,255,1);
+}
+
+.esri-home:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.esri-home>i {
+  font-size: 3em;
+  text-shadow: 1px 1px 2px black; 
+}
