@@ -29,9 +29,10 @@ define(["require", "exports", 'angular2/core', './map.service', 'esri-mods'], fu
                 template: '<div id="viewDiv"></div>',
                 providers: [map_service_1.default]
             }), 
-            __metadata('design:paramtypes', [map_service_1.default, core_1.ElementRef])
+            __metadata('design:paramtypes', [map_service_1.default, (typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
         ], MapComponent);
         return MapComponent;
+        var _a;
     })();
     exports.MapComponent = MapComponent;
 });
