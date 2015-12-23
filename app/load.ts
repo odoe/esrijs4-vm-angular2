@@ -3,8 +3,7 @@ declare var System: any;
 const deps = [
   'esri/Map',
   'esri/views/MapView',
-  'esri/widgets/Home/HomeViewModel',
-  'dojo/topic'
+  'esri/widgets/Home/HomeViewModel'
   ];
 const moduleName = (name) => name.match(/[^\/]+$/).shift();
 

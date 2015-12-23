@@ -1,4 +1,4 @@
-import { Component, ElementRef } from 'angular2/core';
+import { Component, ElementRef, Output, EventEmitter } from 'angular2/core';
 import MapService from './map.service';
 import { MapView } from 'esri-mods';
 
@@ -8,10 +8,12 @@ import { MapView } from 'esri-mods';
     providers: [MapService]
 })
 export class MapComponent {
+
+  @Output() viewCreated = new EventEmitter();
   
-  view: null,
+  view: null;
   
-  constructor(public _service: MapService, private elRef:ElementRef) {}
+  constructor(private _service: MapService, private elRef:ElementRef) {}
   
   ngOnInit() {
     this.view = new MapView({
@@ -20,6 +22,6 @@ export class MapComponent {
       zoom: 10,
       center: [-120.76, 37.93]
     });
-    this._service.setView(this.view);
+    this.viewCreated.next(this.view);
   }
 }
