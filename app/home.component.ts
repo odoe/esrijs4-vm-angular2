@@ -1,29 +1,28 @@
 import { Component, ElementRef } from 'angular2/core';
-import { HomeViewModel, topic } from 'esri-mods';
+import { HomeViewModel } from 'esri-mods';
 
 @Component({
   selector: 'esri-home',
+  inputs: ['view'],
   template: '<a class="esri-home" href="#" (click)="onClick($event)"><i class="material-icons">home</i></a>'
 })
 export class HomeComponent {
 
   vm: HomeViewModel = null;
 
-  view: null;
-
   constructor() {
-    topic.subscribe('map-view', this.onMapView.bind(this));
+    this.vm = new HomeViewModel({});
   }
 
-
-  onMapView(view) {
-    this.vm = new HomeViewModel({
-      view: view
-    });
+  setView(view) {
+    this.vm.set('view', view);
   }
 
   onClick(e) {
     e.preventDefault();
+    if (!this.vm.view) {
+        return;
+    }
     this.vm.goHome();
   }
 }
