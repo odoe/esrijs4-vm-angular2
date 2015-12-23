@@ -3,7 +3,6 @@ import { HomeViewModel } from 'esri-mods';
 
 @Component({
   selector: 'esri-home',
-  inputs: ['view'],
   template: '<a class="esri-home" href="#" (click)="onClick($event)"><i class="material-icons">home</i></a>'
 })
 export class HomeComponent {
