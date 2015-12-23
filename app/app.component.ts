@@ -8,8 +8,9 @@ import { HomeComponent } from './home.component';
     template:
     `
     <div>
-    <esri-map #mapView (viewCreated)="homeButton.setView(mapView.view)" ></esri-map>
-    <esri-home #homeButton></esri-home>
+    <esri-map #mapView (viewCreated)="homeButton.setView(mapView.view)">
+      <esri-home #homeButton></esri-home>
+    </esri-map>
     </div>
     `
 })
