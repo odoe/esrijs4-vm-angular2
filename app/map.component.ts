@@ -4,7 +4,7 @@ import { MapView } from 'esri-mods';
 
 @Component({
     selector: 'esri-map',
-    template: '<div id="viewDiv"></div>',
+    template: '<div id="viewDiv"><ng-content></ng-content></div>',
     providers: [MapService]
 })
 export class MapComponent {
