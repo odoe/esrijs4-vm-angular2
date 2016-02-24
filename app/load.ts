@@ -1,12 +1,6 @@
 declare var System: any;
 
-const deps = [
-  'esri/Map',
-  'esri/views/MapView',
-  'esri/widgets/Home/HomeViewModel'
-  ];
-const moduleName = (name) => name.match(/[^\/]+$/).shift();
-
+// configure system.js
 System.config({
   packages: {
     app: {
@@ -15,21 +9,16 @@ System.config({
   }
 });
 
-function register(name: string, mods: any[]) {
-  System.register(name, [], exp => {
-    return {
-      setters: [],
-      execute: () => {
-        mods.map((mod: any, idx: number) => {
-          exp(moduleName(deps[idx]), mod);
-        });
-      }
-    }
-  });
-}
-
-require(deps, function(...modules) {
-  register('esri-mods', modules);
+// load esri modules needed by this application
+// into a System.js module called esri-mods
+esriLoader.require({
+  moduleName: 'esri-mods'
+}, [
+  'esri/Map',
+  'esri/views/MapView',
+  'esri/widgets/Home/HomeViewModel'
+], () => {
+  // then bootstrap application
   System.import('app/boot')
-    .then(null, console.error.bind(console));
+    .then(null, console.error.bind(console));  
 });

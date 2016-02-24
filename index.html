@@ -3,19 +3,20 @@
     <link rel="stylesheet" href="css/main.css">
     <title>ArcGIS JS API 4.0beta3 & Angular 2</title>
 
-    <!-- 1. Load libraries -->
+    <!-- 1. Load Angular libraries -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
-    <!-- 2. Configure SystemJS -->
+    <!-- 2. Configure and load Esri libraries -->
     <script>
       window.dojoConfig = {
         async: true
       };
-   </script>
+    </script>
     <script src="https://js.arcgis.com/4.0beta3/"></script>
+    <script src="esri-system-js/esriLoader.js"></script>
   </head>
 
   <!-- 3. Display the application -->
