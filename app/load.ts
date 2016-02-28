@@ -11,9 +11,7 @@ System.config({
 
 // load esri modules needed by this application
 // into a System.js module called esri-mods
-esriLoader.require({
-  moduleName: 'esri-mods'
-}, [
+esriSystem.register([
   'esri/Map',
   'esri/views/MapView',
   'esri/widgets/Home/HomeViewModel'
@@ -21,4 +19,6 @@ esriLoader.require({
   // then bootstrap application
   System.import('app/boot')
     .then(null, console.error.bind(console));  
+}, {
+  outModuleName: 'esri-mods'
 });
