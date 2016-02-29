@@ -1,4 +1,4 @@
 node_modules/*
 .vscode/*
-*.js
+app/*.js
 *.js.map
